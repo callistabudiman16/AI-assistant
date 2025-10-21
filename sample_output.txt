@@ -1,0 +1,67 @@
+```json
+{
+  "company": "Meta",
+  "role": "Project Manager",
+  "category": "Product Sense",
+  "framework": "5C-PRD",
+  "step_sequence": [
+    {
+      "step_number": 1,
+      "title": "Customer",
+      "content": "Our primary segment is Facebook Group community leaders, particularly those managing groups with >10,000 members, who find it challenging to foster deeper, real-time engagement; over 60% report difficulty facilitating spontaneous community interactions beyond asynchronous posts."
+    },
+    {
+      "step_number": 2,
+      "title": "Context",
+      "content": "Now is the opportune moment due to a clear market shift towards authentic, real-time digital spaces and Meta's mission to build human connection; existing platform tools don't fully support spontaneous voice-led interactions, limiting community dynamism."
+    },
+    {
+      "step_number": 3,
+      "title": "Challenge",
+      "content": "A significant pain point is the low real-time engagement within Groups, with current Live stream or Rooms participation accounting for less than 5% of total Group interactions, indicating a profound unmet need for direct, ephemeral communication that drives active contribution."
+    },
+    {
+      "step_number": 4,
+      "title": "Concept",
+      "content": "Our MVP is 'Instant Audio Rooms' within Groups, enabling admins to launch spontaneous, topic-based audio-only calls for members, differentiated by seamless integration and transient nature; designed with privacy-by-design, featuring default unrecorded sessions and clear member controls."
+    },
+    {
+      "step_number": 5,
+      "title": "PRD-lite",
+      "content": "Success metrics include a +15% uplift in Group DAU and 20% Audio Room adoption rate among pilot groups. Rollout will be phased: pilot with top 5% of community-focused Groups in Q2, expanding to 20% of active Groups in Q3. Risks like moderation challenges will be mitigated with enhanced admin tools and automated harmful content detection."
+    }
+  ],
+  "meta_alignment_prompts": [
+    "Build human connection",
+    "Empower community leaders",
+    "Safe and private spaces"
+  ],
+  "metric_pack": {
+    "impact": ["Group DAU (%Δ)", "Audio Room Adoption (%)", "Average Room session duration (mins)"],
+    "retention": ["D7 Group member retention (%)", "Churn reduction for active Groups (%)"],
+    "experience_quality": ["Audio quality p95 latency", "Admin satisfaction NPS", "Member sentiment for Rooms"],
+    "safety_privacy": ["Harmful content prevalence in Rooms", "User report resolution time (hrs)", "Privacy incident rate related to audio"],
+    "execution_quality": ["On-time feature delivery (%)", "Defect density post-launch"],
+    "growth_monetization": ["Indirect uplift in Group ad revenue", "Creator adoption of audio features"],
+    "guardrails": ["Accessibility coverage for audio features (%)", "Moderation tool effectiveness (%)"]
+  },
+  "pacing_guidance": {
+    "one_minute": "Introduce the customer, their unmet need, and the current market/platform context for building human connection.",
+    "two_minutes": "Elaborate on the quantified challenge, describe the MVP concept with its differentiator and privacy features, and outline initial success metrics."
+  },
+  "script_skeleton": {
+    "one_minute_bullets": [
+      "Hello, I'm here to discuss building the future of human connection.",
+      "My focus is on Facebook Group leaders who struggle with real-time engagement; data shows over 60% face this challenge.",
+      "The market demands more authentic digital interaction, aligning perfectly with Meta's mission for deeper community building."
+    ],
+    "two_minutes_bullets": [
+      "The core problem: less than 5% of Group interactions are real-time, indicating a massive gap for spontaneous connection.",
+      "My concept: 'Instant Audio Rooms' – a seamless, ephemeral voice feature within Groups, empowering leaders.",
+      "This MVP will have privacy-by-design (default unrecorded, E2E encryption), distinguishing it from other platforms.",
+      "Success means +15% Group DAU, 20% Audio Room adoption among pilots, with phased rollout and robust moderation plans."
+    ]
+  },
+  "red_flag": "Failure to address real-time moderation challenges effectively, leading to unsafe user experiences and low adoption, would be the primary failure mode."
+}
+```

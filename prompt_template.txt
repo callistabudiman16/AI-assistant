@@ -1,0 +1,363 @@
+You are a senior interviewer. Generate a concise answer that returns ONLY valid JSON (no prose, no backticks).
+Audience: {company} interview panel.
+Role: {role}.
+Domain: {product_domain}.
+Duration to speak: {duration_minutes} minutes.
+
+Mission: {mission}
+Top values: {values_csv}
+
+Category: {category}
+Allowed categories: ["Product Sense", "Execution", "Leadership & Collaboration", "Analytical & Impact", "System Design", "Coding & Algorithms", "Technical Architecture", "Problem Solving", "Data Structures", "Database Design", "API Design", "Security & Scalability", "Code Review & Testing"]
+
+Follow the specific category insert (provided below) for steps and metrics, but ALWAYS output the same JSON structure:
+
+{
+"company": "string",
+"role": "string",
+"category": "Product Sense|Execution|Leadership & Collaboration|Analytical & Impact|System Design|Coding & Algorithms|Technical Architecture|Problem Solving|Data Structures|Database Design|API Design|Security & Scalability|Code Review & Testing",
+"framework": "string",
+"step_sequence": [
+{"step_number": 1, "title": "string", "content": "1-2 sentences, data-driven, company-tailored"},
+{"step_number": 2, "title": "string", "content": "…"}
+],
+"company_alignment_prompts": ["short phrase", "short phrase", "short phrase"],
+"metric_pack": {
+"impact": ["metric name", "…"],
+"retention": ["metric name", "…"],
+"experience_quality": ["metric name", "…"],
+"safety_privacy": ["metric name", "…"],
+"execution_quality": ["metric name", "…"],
+"growth_monetization": ["metric name", "…"],
+"guardrails": ["metric name", "…"]
+},
+"pacing_guidance": {
+"one_minute": "what to cover in ~1 minute",
+"two_minutes": "what to cover in ~2 minutes"
+},
+"script_skeleton": {
+"one_minute_bullets": ["bullet", "bullet", "bullet"],
+"two_minutes_bullets": ["bullet", "bullet", "bullet", "bullet"]
+},
+"red_flag": "one sentence describing the main failure mode"
+}
+
+Rules:
+
+Output only the JSON object above.
+
+Keep each string concise and specific to {company}.
+
+Use measurable language (targets, % deltas, timelines).
+
+Prefer {company}/domain-specific metrics relevant to the category and role.
+
+Do not invent sensitive or private data; use hypothetical but realistic ranges when needed.
+
+Category Inserts
+
+1) Product Sense — 5C-PRD
+
+Framework: 5C-PRD (Customer, Context, Challenge, Concept, PRD-lite)
+Steps:
+
+Customer — define primary segments (e.g., creators, community leaders, new users) and unmet need with a stat.
+
+Context — why now; tie to mission of building human connection; note platform or market shift.
+
+Challenge — quantify pain (e.g., discovery friction, safety concern) with sample % or baseline.
+
+Concept — describe MVP feature and differentiator; include privacy-by-design note.
+
+PRD-lite — success metrics, phased rollout, risks and mitigations.
+
+Metric Pack hints:
+impact: DAU (%Δ), MAU (%Δ), Sessions/user, Feature adoption (%), Share/Invite rate
+retention: D1/D7/D30 retention, Churn (%), Reactivation rate
+experience_quality: NPS, CSAT, Content creation rate/user, Latency p95
+safety_privacy: Privacy incident rate, Harmful content prevalence, User report response time (hrs)
+execution_quality: On-time milestone rate, Defect density post-launch
+growth_monetization: Conversion to creator mode, ARPU, Ads relevance score
+guardrails: Accessibility coverage (%), Regional compliance exceptions
+
+2) Execution — ICE-R
+
+Framework: ICE-R (Impact, Confidence, Effort, Risk)
+Steps:
+
+Goal — quant target (e.g., +10% creator engagement in Q2).
+
+Options — list initiatives.
+
+Scoring — give ICE-R table logic; show 1–2 numeric scores.
+
+Prioritize — justify trade-offs (risk, privacy, effort).
+
+Plan — milestones, owners, weekly cadence, de-risking.
+
+Metric Pack hints:
+impact: Feature adoption (%), Reach (# users), Engagement lift (%)
+retention: Stickiness (DAU/MAU), Cohort retention
+experience_quality: Crash-free sessions (%), TTFB p95, Rollout health (holdback delta)
+safety_privacy: Security incidents, Policy violation rate, Data access anomalies
+execution_quality: Velocity (SP/sprint), Cycle time (days), On-time delivery (%)
+growth_monetization: Activation rate, Upsell/opt-in rate, Cost per incremental DAU
+guardrails: Error budget burn, Privacy review status
+
+3) Leadership & Collaboration — 3E
+
+Framework: 3E (Empathy, Enablement, Execution)
+Steps:
+
+Empathy — map stakeholder goals; surface constraints.
+
+Enablement — clarify ownership, SLAs, async rituals.
+
+Execution — resolve conflict with data; align to mission and safety.
+
+Metric Pack hints:
+impact: Cross-team goal attainment (%), Program OKR progress
+retention: Team stability (voluntary attrition %)
+experience_quality: Pulse score, Psychological safety index, Decision latency (days)
+safety_privacy: Escalation resolution SLA, Policy sign-off lead time
+execution_quality: Dependency lead time (hrs), Blocker rate, Commitment reliability (%)
+growth_monetization: Partner team adoption (#), Creator satisfaction index
+guardrails: Conflict recurrence rate, Unplanned work ratio
+
+4) Analytical & Impact — MVM
+
+Framework: MVM (Metric, Variance, Meaning)
+Steps:
+
+Metric — pick a north star (e.g., Meaningful Interactions/DAU) and baseline.
+
+Variance — decompose uplift/decline by segment, surface, and content type.
+
+Meaning — propose actions; define experiment design and target effect size.
+
+Metric Pack hints:
+impact: Meaningful interactions/DAU, Average comment depth, Time well spent (mins/day)
+retention: Return rate (7/30), Session frequency
+experience_quality: Content quality score, Spam rate, False positive/negative moderation
+safety_privacy: Safety reports resolved (%), Report-to-action latency (hrs)
+execution_quality: Experiment power achieved, Data freshness SLA met (%)
+growth_monetization: ARPU, Ad load within comfort band, Creator payout rate (%)
+guardrails: Metric gaming risk, Wellbeing threshold (fatigue index)
+
+5) System Design — SCALE
+
+Framework: SCALE (Scale, Components, APIs, Load, Edge cases)
+Steps:
+
+Scale — define user count, data volume, and performance requirements.
+
+Components — identify core services, databases, and external dependencies.
+
+APIs — design service interfaces and data flow between components.
+
+Load — calculate throughput, latency, and resource requirements.
+
+Edge cases — handle failures, data consistency, and security considerations.
+
+Metric Pack hints:
+impact: System throughput (req/sec), Response time p95 (ms), Availability (%)
+retention: Service uptime (%), Data consistency rate (%)
+experience_quality: User experience score, Error rate (%), Recovery time (min)
+safety_privacy: Security incidents, Data breach rate, Access control violations
+execution_quality: Deployment success rate (%), Performance regression rate (%)
+growth_monetization: Cost per request, Resource utilization efficiency (%)
+guardrails: Circuit breaker trips, Rate limiting effectiveness, Backup success rate (%)
+
+6) Coding & Algorithms — STEPS
+
+Framework: STEPS (Specify, Think, Explain, Program, Solve)
+Steps:
+
+Specify — clarify requirements, constraints, and edge cases.
+
+Think — discuss approach, time/space complexity, and trade-offs.
+
+Explain — walk through algorithm logic and optimization strategies.
+
+Program — write clean, efficient code with proper error handling.
+
+Solve — test with examples and discuss potential improvements.
+
+Metric Pack hints:
+impact: Algorithm efficiency (time/space complexity), Code correctness (%)
+retention: Code maintainability score, Documentation coverage (%)
+experience_quality: Code readability score, Test coverage (%)
+safety_privacy: Security vulnerability count, Input validation coverage (%)
+execution_quality: Bug rate, Code review feedback score
+growth_monetization: Performance optimization impact, Code reuse rate (%)
+guardrails: Memory leak detection, Stack overflow prevention, Error handling coverage (%)
+
+7) Technical Architecture — SOLID
+
+Framework: SOLID (Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion)
+Steps:
+
+Single responsibility — define clear module boundaries and responsibilities.
+
+Open/closed — design for extension without modification.
+
+Liskov substitution — ensure proper inheritance and polymorphism.
+
+Interface segregation — create focused, cohesive interfaces.
+
+Dependency inversion — depend on abstractions, not concretions.
+
+Metric Pack hints:
+impact: System modularity score, Code reusability (%)
+retention: Architecture compliance rate (%), Technical debt ratio
+experience_quality: Developer experience score, Onboarding time (days)
+safety_privacy: Security architecture compliance (%), Data flow validation (%)
+execution_quality: Build success rate (%), Integration test coverage (%)
+growth_monetization: Development velocity impact, Maintenance cost reduction (%)
+guardrails: Architecture review compliance, Design pattern adherence (%)
+
+8) Problem Solving — DEBUG
+
+Framework: DEBUG (Define, Explore, Break down, Understand, Generate)
+Steps:
+
+Define — clearly state the problem and success criteria.
+
+Explore — gather information, logs, and system state.
+
+Break down — decompose into smaller, manageable components.
+
+Understand — identify root cause through analysis and testing.
+
+Generate — propose and implement solutions with monitoring.
+
+Metric Pack hints:
+impact: Problem resolution time (hrs), System stability improvement (%)
+retention: Recurrence prevention rate (%), Knowledge documentation (%)
+experience_quality: User impact reduction (%), Communication effectiveness score
+safety_privacy: Security incident response time (hrs), Data protection measures (%)
+execution_quality: Solution quality score, Implementation success rate (%)
+growth_monetization: Cost savings from prevention, Efficiency gains (%)
+guardrails: Monitoring coverage (%), Alert accuracy rate (%)
+
+9) Data Structures — CRUD
+
+Framework: CRUD (Create, Read, Update, Delete) + Performance
+Steps:
+
+Create — design data structure with proper initialization.
+
+Read — implement efficient access patterns and queries.
+
+Update — handle modifications while maintaining integrity.
+
+Delete — manage cleanup and memory optimization.
+
+Performance — analyze time/space complexity for operations.
+
+Metric Pack hints:
+impact: Operation performance (ms), Memory efficiency (%)
+retention: Data integrity rate (%), Structure stability (%)
+experience_quality: API usability score, Error handling coverage (%)
+safety_privacy: Data validation rate (%), Access control compliance (%)
+execution_quality: Implementation correctness (%), Test coverage (%)
+growth_monetization: Performance cost savings, Scalability improvements (%)
+guardrails: Memory leak prevention, Overflow protection, Type safety (%)
+
+10) Database Design — ACID
+
+Framework: ACID (Atomicity, Consistency, Isolation, Durability)
+Steps:
+
+Atomicity — ensure all operations succeed or fail together.
+
+Consistency — maintain data integrity and business rules.
+
+Isolation — prevent concurrent access issues.
+
+Durability — guarantee data persistence and recovery.
+
+Performance — optimize queries, indexing, and partitioning.
+
+Metric Pack hints:
+impact: Query performance (ms), Data accuracy (%)
+retention: Data consistency rate (%), Backup success rate (%)
+experience_quality: Query response time p95 (ms), Data availability (%)
+safety_privacy: Data encryption coverage (%), Access audit compliance (%)
+execution_quality: Schema migration success rate (%), Index optimization (%)
+growth_monetization: Storage cost efficiency (%), Query cost reduction (%)
+guardrails: Data validation rate (%), Constraint enforcement (%)
+
+11) API Design — REST
+
+Framework: REST (Representational State Transfer) + Quality
+Steps:
+
+Representational — design clear resource models and URIs.
+
+State Transfer — implement stateless, cacheable operations.
+
+Quality — ensure reliability, security, and documentation.
+
+Versioning — handle backward compatibility and evolution.
+
+Monitoring — implement logging, metrics, and alerting.
+
+Metric Pack hints:
+impact: API adoption rate (%), Response time p95 (ms)
+retention: API version usage (%), Client satisfaction (%)
+experience_quality: Documentation quality score, Error message clarity
+safety_privacy: Authentication success rate (%), Rate limiting effectiveness (%)
+execution_quality: API uptime (%), Backward compatibility rate (%)
+growth_monetization: API usage growth (%), Cost per request
+guardrails: Input validation rate (%), Error handling coverage (%)
+
+12) Security & Scalability — SECURE
+
+Framework: SECURE (Security, Efficiency, Capacity, Usability, Reliability, Extensibility)
+Steps:
+
+Security — implement authentication, authorization, and encryption.
+
+Efficiency — optimize performance and resource utilization.
+
+Capacity — design for horizontal and vertical scaling.
+
+Usability — ensure developer and user experience.
+
+Reliability — implement fault tolerance and monitoring.
+
+Extensibility — plan for future growth and changes.
+
+Metric Pack hints:
+impact: Security incident rate (%), System performance (req/sec)
+retention: Security compliance rate (%), System uptime (%)
+experience_quality: User experience score, Developer satisfaction
+safety_privacy: Data breach prevention (%), Privacy compliance (%)
+execution_quality: Security audit score, Performance regression rate (%)
+growth_monetization: Cost efficiency (%), Scalability improvements (%)
+guardrails: Vulnerability scan coverage (%), Penetration test compliance (%)
+
+13) Code Review & Testing — TEST
+
+Framework: TEST (Test coverage, Error handling, Security, Testing strategy)
+Steps:
+
+Test coverage — ensure comprehensive unit, integration, and e2e tests.
+
+Error handling — implement robust exception management.
+
+Security — review for vulnerabilities and best practices.
+
+Testing strategy — define testing pyramid and automation.
+
+Quality gates — establish review criteria and metrics.
+
+Metric Pack hints:
+impact: Test coverage (%), Bug detection rate (%)
+retention: Code quality score, Technical debt reduction (%)
+experience_quality: Developer productivity score, Review feedback quality
+safety_privacy: Security test coverage (%), Vulnerability detection (%)
+execution_quality: Review cycle time (hrs), Test automation rate (%)
+growth_monetization: Quality cost savings, Development velocity (%)
+guardrails: Code quality gates, Review compliance rate (%)

@@ -1,0 +1,89 @@
+{
+  "company": "Meta",
+  "role": "Project Manager",
+  "category": "Product Sense",
+  "framework": "5C-PRD",
+  "step_sequence": [
+    {
+      "step_number": 1,
+      "title": "Customer",
+      "content": "Community leaders on Meta platforms face challenges fostering real-time, spontaneous connection, with ~30% lower active member participation in larger groups beyond asynchronous posts."
+    },
+    {
+      "step_number": 2,
+      "title": "Context",
+      "content": "With rising demand for authentic virtual interactions post-pandemic and ~20% YoY growth in live content consumption on Meta, now is ideal to deepen human connection through new live formats."
+    },
+    {
+      "step_number": 3,
+      "title": "Challenge",
+      "content": "Current tools lead to low discoverability for spontaneous live interactions; only ~15% of members join live sessions announced less than 24 hours prior, highlighting significant friction."
+    },
+    {
+      "step_number": 4,
+      "title": "Concept",
+      "content": "Introduce 'Spontaneous Live Spaces' as an MVP: a voice-only, temporary room feature discoverable via in-group indicators. Designed with privacy-by-design, including E2E encryption and host moderation."
+    },
+    {
+      "step_number": 5,
+      "title": "PRD-lite",
+      "content": "Success will be measured by a +10% lift in Meaningful Interactions/DAU and 5% D7 retention of participants in pilot groups. Rollout phases from internal to broad market, mitigating content moderation risks via AI and host tools."
+    }
+  ],
+  "meta_alignment_prompts": [
+    "Build connection & community",
+    "Give people a voice",
+    "Keep people safe & protect privacy"
+  ],
+  "metric_pack": {
+    "impact": [
+      "Meaningful Interactions/DAU delta",
+      "Spontaneous Live Spaces adoption rate (%)",
+      "Invite-to-join rate (%)"
+    ],
+    "retention": [
+      "D7/D30 Live Space participant retention",
+      "Group churn rate (%)"
+    ],
+    "experience_quality": [
+      "Live Space NPS",
+      "Host setup time (s)",
+      "Audio stream latency p95 (ms)"
+    ],
+    "safety_privacy": [
+      "Live audio harmful content prevalence",
+      "User report resolution time (hrs)",
+      "Privacy incident rate (per 1M sessions)"
+    ],
+    "execution_quality": [
+      "On-time milestone delivery (%)",
+      "Post-launch defect density"
+    ],
+    "growth_monetization": [
+      "Group member activation into Live Spaces (%)",
+      "Indirect ad engagement lift (across surfaces)"
+    ],
+    "guardrails": [
+      "Notification opt-out rate",
+      "Host moderation tool usage (%)"
+    ]
+  },
+  "pacing_guidance": {
+    "one_minute": "Set the stage by defining the primary customer segment (community leaders), their unmet need for deeper connection, and the timely market/platform context for this problem.",
+    "two_minutes": "Elaborate on the quantified challenge of low discoverability for spontaneous interactions, then introduce the 'Spontaneous Live Spaces' MVP concept, its unique differentiator, and inherent privacy-by-design."
+  },
+  "script_skeleton": {
+    "one_minute_bullets": [
+      "Start by identifying community leaders as our key customer.",
+      "Highlight their struggle with fostering real-time engagement, citing ~30% lower participation in large groups.",
+      "Frame this within the broader context of Meta's mission to build connection and the surge in live content consumption."
+    ],
+    "two_minutes_bullets": [
+      "Quantify the pain: only ~15% of members join spontaneous live events due to friction.",
+      "Introduce 'Spontaneous Live Spaces' as a voice-only, temporary MVP within groups.",
+      "Emphasize its low-friction setup and discoverability via in-group indicators as differentiators.",
+      "Note the privacy-by-design approach, including E2E encryption and robust host moderation tools."
+    ]
+  },
+  "red_flag": "Failure to build comprehensive safety and moderation into a real-time communication feature could lead to widespread negative experiences and significant brand damage."
+}
